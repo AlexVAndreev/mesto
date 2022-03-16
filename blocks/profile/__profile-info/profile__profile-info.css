@@ -1,0 +1,7 @@
+.profile__profile-info {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  margin-left: 30px;
+}

@@ -1,0 +1,11 @@
+.element {
+  max-width: 284px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 82px;
+  grid-template-rows: 282px 80px;
+  align-items: center;
+  justify-items: center;
+  background-color: white;
+}
