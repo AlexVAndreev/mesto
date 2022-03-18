@@ -7,3 +7,7 @@
 ### Технологии
 
 HTML, CSS, JavaScript
+
+### Web
+
+https://alexvandreev.github.io/mesto/
