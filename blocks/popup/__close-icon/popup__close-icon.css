@@ -1,0 +1,9 @@
+.popup__close-icon {
+  position: absolute;
+  top: -35px;
+  right: -35px;
+  /* border: red 1px solid; */
+}
+.popup__close-icon:hover {
+  cursor: pointer;
+}
