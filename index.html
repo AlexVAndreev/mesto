@@ -13,11 +13,10 @@
     <title>Место</title>
   </head>
   <body class="page">
+    <header class="header">
+      <img src="./images/logo.svg" alt="Лого Место" class="logo" />
+    </header>
     <main class="main-container">
-      <header class="header">
-        <img src="./images/logo.svg" alt="Лого Место" class="logo" />
-      </header>
-
       <section class="profile">
         <img
           src="./images/Avatar.png"
@@ -26,18 +25,13 @@
         />
         <div class="profile__profile-info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <img
-            src="./images/edit_button.svg"
+          <button
             class="profile__edit-button"
-            alt="кнопка редактировать"
-          />
+            name="profileEditButton"
+          ></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <img
-          src="./images/add_cross.svg"
-          class="profile__add-button"
-          alt="кнопка добавить"
-        />
+        <button class="profile__add-button" name="profileAddButton"></button>
       </section>
       <section class="elements">
         <div class="element">
@@ -46,7 +40,7 @@
             alt="Карачаевск"
             class="element__photo"
           />
-          <p class="element__title">Карачаевск</p>
+          <h2 class="element__title">Карачаевск</h2>
           <img src="./images/like.svg" class="element__like" alt="Лайк" />
         </div>
         <div class="element">
@@ -55,12 +49,12 @@
             alt="Эльбрус"
             class="element__photo"
           />
-          <p class="element__title">Эльбрус</p>
+          <h2 class="element__title">Эльбрус</h2>
           <img src="./images/like.svg" class="element__like" alt="Лайк" />
         </div>
         <div class="element">
           <img src="./images/dombai.png" alt="Домбай" class="element__photo" />
-          <p class="element__title">Домбай</p>
+          <h2 class="element__title">Домбай</h2>
           <img src="./images/like.svg" class="element__like" alt="Лайк" />
         </div>
         <div class="element">
@@ -69,12 +63,12 @@
             alt="Эльбрус"
             class="element__photo"
           />
-          <p class="element__title">Гора Эльбрус</p>
+          <h2 class="element__title">Гора Эльбрус</h2>
           <img src="./images/like.svg" class="element__like" alt="Лайк" />
         </div>
         <div class="element">
           <img src="./images/dombai.png" alt="Домбай" class="element__photo" />
-          <p class="element__title">Домбай</p>
+          <h2 class="element__title">Домбай</h2>
           <img src="./images/like.svg" class="element__like" alt="Лайк" />
         </div>
         <div class="element">
@@ -83,27 +77,40 @@
             alt="Карачаевск"
             class="element__photo"
           />
-          <p class="element__title">Карачаево-Черкесская репаблик</p>
+          <h2 class="element__title">Карачаево-Черкесская репаблик</h2>
           <img src="./images/like.svg" class="element__like" alt="Лайк" />
         </div>
       </section>
-      <footer class="footer">
-        <p class="footer__copy">© 2020 Mesto Russia</p>
-      </footer>
     </main>
+    <footer class="footer">
+      <p class="footer__copy">© 2020 Mesto Russia</p>
+    </footer>
     <section class="popup">
-      <form class="popup__container">
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <input type="text" class="popup__profile-title" value="" />
-        <input type="text" class="popup__profile-subtitle" value="" />
-        <input type="submit" class="popup__submit-btn" value="Сохранить" />
-        <img
-          src="./images/popup_close_icon.png"
-          alt="Иконка закрытия"
-          class="popup__close-icon"
-        />
-      </form>
+      <div class="popup__container">
+        <button class="popup__close-icon" name="popupCloseIcon"></button>
+        <form class="popup__profile-form" name="profileEditForm">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input
+            type="text"
+            class="popup__profile-input popup__profile-title"
+            value=""
+            name="profileTitle"
+          />
+          <input
+            type="text"
+            class="popup__profile-input popup__profile-subtitle"
+            value=""
+            name="profileSubtitle"
+          />
+          <input
+            type="submit"
+            class="popup__submit-btn"
+            value="Сохранить"
+            name="profileSubmit"
+          />
+        </form>
+      </div>
     </section>
-    <script src="./script.js"></script>
+    <script src="./script/script.js"></script>
   </body>
 </html>
