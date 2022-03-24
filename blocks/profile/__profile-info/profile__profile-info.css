@@ -8,7 +8,7 @@
 @media (max-width: 400px) {
   .profile__profile-info {
     grid-template-columns: 260px min-content;
-    justify-items: center;
+    /* justify-items: center; */
     margin-left: 0;
     margin-bottom: 36px;
   }
