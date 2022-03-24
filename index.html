@@ -27,11 +27,16 @@
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button
             class="profile__edit-button"
-            name="profileEditButton"
+            name="profile-edit-button"
+            type="button"
           ></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__add-button" name="profileAddButton"></button>
+        <button
+          class="profile__add-button"
+          name="profile-add-button"
+          type="button"
+        ></button>
       </section>
       <section class="elements">
         <div class="element">
@@ -41,7 +46,11 @@
             class="element__photo"
           />
           <h2 class="element__title">Карачаевск</h2>
-          <img src="./images/like.svg" class="element__like" alt="Лайк" />
+          <button
+            class="element__like"
+            name="element-like-button"
+            type="button"
+          ></button>
         </div>
         <div class="element">
           <img
@@ -50,12 +59,20 @@
             class="element__photo"
           />
           <h2 class="element__title">Эльбрус</h2>
-          <img src="./images/like.svg" class="element__like" alt="Лайк" />
+          <button
+            class="element__like"
+            name="element-like-button"
+            type="button"
+          ></button>
         </div>
         <div class="element">
           <img src="./images/dombai.png" alt="Домбай" class="element__photo" />
           <h2 class="element__title">Домбай</h2>
-          <img src="./images/like.svg" class="element__like" alt="Лайк" />
+          <button
+            class="element__like"
+            name="element-like-button"
+            type="button"
+          ></button>
         </div>
         <div class="element">
           <img
@@ -64,12 +81,20 @@
             class="element__photo"
           />
           <h2 class="element__title">Гора Эльбрус</h2>
-          <img src="./images/like.svg" class="element__like" alt="Лайк" />
+          <button
+            class="element__like"
+            name="element-like-button"
+            type="button"
+          ></button>
         </div>
         <div class="element">
           <img src="./images/dombai.png" alt="Домбай" class="element__photo" />
           <h2 class="element__title">Домбай</h2>
-          <img src="./images/like.svg" class="element__like" alt="Лайк" />
+          <button
+            class="element__like"
+            name="element-like-button"
+            type="button"
+          ></button>
         </div>
         <div class="element">
           <img
@@ -78,7 +103,11 @@
             class="element__photo"
           />
           <h2 class="element__title">Карачаево-Черкесская репаблик</h2>
-          <img src="./images/like.svg" class="element__like" alt="Лайк" />
+          <button
+            class="element__like"
+            name="element-like-button"
+            type="button"
+          ></button>
         </div>
       </section>
     </main>
@@ -87,26 +116,30 @@
     </footer>
     <section class="popup">
       <div class="popup__container">
-        <button class="popup__close-icon" name="popupCloseIcon"></button>
-        <form class="popup__profile-form" name="profileEditForm">
+        <button
+          class="popup__close-icon"
+          name="popup-close-icon"
+          type="button"
+        ></button>
+        <form class="popup__profile-form" name="profile-edit-form">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input
             type="text"
-            class="popup__profile-input popup__profile-title"
+            class="popup__profile-input popup__profile-input_type_title"
             value=""
-            name="profileTitle"
+            name="profile-title"
           />
           <input
             type="text"
-            class="popup__profile-input popup__profile-subtitle"
+            class="popup__profile-input popup__profile-input_type_subtitle"
             value=""
-            name="profileSubtitle"
+            name="profile-subtitle"
           />
           <input
             type="submit"
             class="popup__submit-btn"
             value="Сохранить"
-            name="profileSubmit"
+            name="profile-submit"
           />
         </form>
       </div>

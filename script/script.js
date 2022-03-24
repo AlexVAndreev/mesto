@@ -4,8 +4,8 @@ let profileTitle = document.querySelector(".profile__title");
 let profileSubtitle = document.querySelector(".profile__subtitle");
 let editClose = document.querySelector(".popup__close-icon");
 let formElement = document.querySelector(".popup__container");
-let nameInput = document.querySelector(".popup__profile-title");
-let jobInput = document.querySelector(".popup__profile-subtitle");
+let nameInput = document.querySelector(".popup__profile-input_type_title");
+let jobInput = document.querySelector(".popup__profile-input_type_subtitle");
 
 function openPopup() {
   popup.classList.add("popup_opened");
