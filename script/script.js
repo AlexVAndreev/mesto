@@ -22,10 +22,10 @@ const elementAddForm = document.querySelector(".popup__element-form");
 const elementTemplate = document.querySelector("#element").content;
 
 const initialCards = [
-  {
-    name: "girl",
-    link: "https://w-dog.ru/wallpapers/4/6/538862541836441/devushka-krasivaya-lico-golubye-glaza-volosy-portret-sharf.jpg",
-  },
+  // {
+  //   name: "girl",
+  //   link: "https://w-dog.ru/wallpapers/4/6/538862541836441/devushka-krasivaya-lico-golubye-glaza-volosy-portret-sharf.jpg",
+  // },
   {
     name: "Архыз",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
