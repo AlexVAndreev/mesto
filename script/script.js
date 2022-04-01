@@ -1,5 +1,5 @@
-const popup = document.querySelector(".popup__forms");
-const popupImage = document.querySelector(".popup__image");
+const popup = document.querySelector(".popup_forms");
+const popupImage = document.querySelector(".popup_image");
 const editClose = document.querySelectorAll(".popup__close-icon");
 const profileEdit = document.querySelector(".profile__edit-button");
 const elementAddBtn = document.querySelector(".profile__add-button");
