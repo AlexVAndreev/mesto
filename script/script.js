@@ -1,5 +1,6 @@
 const popup = document.querySelector(".popup__forms");
-const editClose = document.querySelector(".popup__close-icon");
+const popupImage = document.querySelector(".popup__image");
+const editClose = document.querySelectorAll(".popup__close-icon");
 const profileEdit = document.querySelector(".profile__edit-button");
 const elementAddBtn = document.querySelector(".profile__add-button");
 
@@ -21,6 +22,10 @@ const elementAddForm = document.querySelector(".popup__element-form");
 const elementTemplate = document.querySelector("#element").content;
 
 const initialCards = [
+  {
+    name: "girl",
+    link: "https://w-dog.ru/wallpapers/4/6/538862541836441/devushka-krasivaya-lico-golubye-glaza-volosy-portret-sharf.jpg",
+  },
   {
     name: "Архыз",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
@@ -49,7 +54,9 @@ const initialCards = [
 // вставка элемента
 function insertElement(elementTitle, elementSrc) {
   const addElement = elementTemplate.querySelector(".element").cloneNode(true);
-  addElement.querySelector(".element__photo").src = elementSrc;
+  const elementImage = addElement.querySelector(".element__photo");
+  elementImage.src = elementSrc;
+  elementImage.addEventListener("click", openImage);
   addElement.querySelector(".element__title").textContent = elementTitle;
   addElement
     .querySelector(".element__like")
@@ -105,8 +112,34 @@ function removeElement(event) {
   // console.log(event.target.parentNode);
   event.target.parentNode.remove();
 }
+function openImage(event) {
+  console.log(event);
+  popupImage.classList.add("popup_opened");
+  const createImage = document.createElement("img");
+  const createImageTitle = document.createElement("h3");
+  const popupImageContainer = document.querySelector(".popup__image-container");
 
-editClose.addEventListener("click", closePopup);
+  createImageTitle.textContent =
+    event.target.parentNode.querySelector(".element__title").textContent;
+
+  createImageTitle.classList.add("popup__image-title");
+  createImageTitle.classList.add("popup__image-title_opened");
+
+  createImage.src = event.target.currentSrc;
+  createImage.classList.add("popup__image_opened");
+  createImage.style.maxHeight = "75vh";
+  createImage.style.maxWidth = "75vw";
+  popupImageContainer.insertAdjacentElement("beforeend", createImage);
+  popupImageContainer.insertAdjacentElement("beforeend", createImageTitle);
+}
+function closePopupImage() {
+  document.querySelector(".popup__image_opened").remove();
+  document.querySelector(".popup__image-title_opened").remove();
+  popupImage.classList.remove("popup_opened");
+}
+
+editClose[0].addEventListener("click", closePopup);
+editClose[1].addEventListener("click", closePopupImage);
 profileEdit.addEventListener("click", () => openPopup("profile"));
 elementAddBtn.addEventListener("click", () => openPopup("element"));
 profileEditForm.addEventListener("submit", formSubmitProfile);
