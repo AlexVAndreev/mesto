@@ -38,83 +38,12 @@
           type="button"
         ></button>
       </section>
-      <section class="elements">
-        <div class="element">
-          <img
-            src="./images/karachaevo.png"
-            alt="Карачаевск"
-            class="element__photo"
-          />
-          <h2 class="element__title">Карачаевск</h2>
-          <button
-            class="element__like"
-            name="element-like-button"
-            type="button"
-          ></button>
-        </div>
-        <div class="element">
-          <img
-            src="./images/elbrus_mounting.png"
-            alt="Эльбрус"
-            class="element__photo"
-          />
-          <h2 class="element__title">Эльбрус</h2>
-          <button
-            class="element__like"
-            name="element-like-button"
-            type="button"
-          ></button>
-        </div>
-        <div class="element">
-          <img src="./images/dombai.png" alt="Домбай" class="element__photo" />
-          <h2 class="element__title">Домбай</h2>
-          <button
-            class="element__like"
-            name="element-like-button"
-            type="button"
-          ></button>
-        </div>
-        <div class="element">
-          <img
-            src="./images/elbrus_mounting.png"
-            alt="Эльбрус"
-            class="element__photo"
-          />
-          <h2 class="element__title">Гора Эльбрус</h2>
-          <button
-            class="element__like"
-            name="element-like-button"
-            type="button"
-          ></button>
-        </div>
-        <div class="element">
-          <img src="./images/dombai.png" alt="Домбай" class="element__photo" />
-          <h2 class="element__title">Домбай</h2>
-          <button
-            class="element__like"
-            name="element-like-button"
-            type="button"
-          ></button>
-        </div>
-        <div class="element">
-          <img
-            src="./images/karachaevo.png"
-            alt="Карачаевск"
-            class="element__photo"
-          />
-          <h2 class="element__title">Карачаево-Черкесская репаблик</h2>
-          <button
-            class="element__like"
-            name="element-like-button"
-            type="button"
-          ></button>
-        </div>
-      </section>
+      <section class="elements"></section>
     </main>
     <footer class="footer">
       <p class="footer__copy">© 2020 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup popup__forms">
       <div class="popup__container">
         <button
           class="popup__close-icon"
@@ -142,8 +71,48 @@
             name="profile-submit"
           />
         </form>
+        <form class="popup__element-form" name="edit-form">
+          <h2 class="popup__title">Новое место</h2>
+          <input
+            type="text"
+            class="popup__element-input popup__element-input_type_title"
+            value=""
+            placeholder="Название"
+            name="element-title"
+          />
+          <input
+            type="text"
+            class="popup__element-input popup__element-input_type_link"
+            value=""
+            placeholder="Ссылка на картинку"
+            name="element-link"
+          />
+          <input
+            type="submit"
+            class="popup__submit-btn"
+            value="Сохранить"
+            name="element-submit"
+          />
+        </form>
       </div>
     </section>
+
+    <template id="element">
+      <div class="element">
+        <img src="" alt="" class="element__photo" />
+        <button
+          class="element__basket"
+          name="element-delete-button"
+          type="button"
+        ></button>
+        <h2 class="element__title"></h2>
+        <button
+          class="element__like"
+          name="element-like-button"
+          type="button"
+        ></button>
+      </div>
+    </template>
     <script src="./script/script.js"></script>
   </body>
 </html>

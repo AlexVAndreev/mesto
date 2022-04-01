@@ -18,6 +18,8 @@
 /* element */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__basket/element__basket.css);
+@import url(../blocks/element/__like_active/element__like_active.css);
 @import url(../blocks/element/__photo/element__photo.css);
 @import url(../blocks/element/__title/element__title.css);
 /* footer */
@@ -34,3 +36,5 @@
 @import url(../blocks/popup/__submit-btn/popup__submit-btn.css);
 @import url(../blocks/popup/__profile-title/popup__profile-title.css);
 @import url(../blocks/popup/__profile-subtitle/popup__profile-subtitle.css);
+@import url(../blocks/popup/__element-form/popup__element-form.css);
+@import url(../blocks/popup/__element-input/popup__element-input.css);
