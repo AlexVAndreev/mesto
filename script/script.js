@@ -1,6 +1,6 @@
 // Попапы
-const popupProfileEdit = document.querySelector(".popup__profile-edit");
-const popupElementAdd = document.querySelector(".popup__element-add");
+const popupProfileEdit = document.querySelector(".popup_profile-edit");
+const popupElementAdd = document.querySelector(".popup_element-add");
 const popupCard = document.querySelector(".popup__card");
 console.log(popupCard);
 // Кнопки
