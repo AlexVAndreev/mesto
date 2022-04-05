@@ -6,11 +6,11 @@ console.log(popupCard);
 // Кнопки
 const profileEditOpenButton = document.querySelector(".profile__edit-button");
 const profileEditCloseButton = document.querySelector(
-  ".popup_close-profile-edit"
+  ".popup__close-profile-edit"
 ); // кнопка закрытия редактирования профиля
 const elementAddBtn = document.querySelector(".profile__add-button");
 const elementAddCloseButton = document.querySelector(
-  ".popup_close-element-add"
+  ".popup__close-element-add"
 );
 // Зполняемые поля
 const profileEditForm = document.querySelector(".popup__profile-form");
