@@ -30,6 +30,8 @@ const elementsGrid = document.querySelector(".elements");
 const elementAddForm = document.querySelector(".popup__element-form");
 const elementTemplate = document.querySelector("#element").content;
 
+const createImage = document.querySelector(".popup__card-image");
+const createTitle = document.querySelector(".popup__card-title");
 const popupCardCloseButton = document.querySelector(
   ".popup__card-close-button"
 );
@@ -70,7 +72,9 @@ function insertElement(elementTitle, elementSrc) {
   const elementImage = cardElement.querySelector(".element__photo");
   elementImage.src = elementSrc;
   elementImage.alt = elementTitle;
-  elementImage.addEventListener("click", openPopupCard); //Добавление слушателя на картинку
+  elementImage.addEventListener("click", () =>
+    openPopupCard(elementTitle, elementSrc)
+  ); //Добавление слушателя на картинку
   cardElement.querySelector(".element__title").textContent = elementTitle;
   cardElement
     .querySelector(".element__like")
@@ -97,9 +101,9 @@ function closePopup(popup) {
 }
 // Обработка редактирования профиля.
 function openProfileEdit() {
-  openPopup(popupProfileEdit);
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
+  openPopup(popupProfileEdit);
 }
 
 function formSubmitProfile(evt) {
@@ -131,16 +135,12 @@ function likeActive(event) {
 function removeElement(event) {
   event.target.closest(".element").remove();
 }
-function openPopupCard(event) {
-  console.log(event);
+function openPopupCard(elementTitle, elementSrc) {
+  // console.log(elementTitle, elementSrc);
+  createImage.alt = elementTitle;
+  createTitle.textContent = elementTitle;
+  createImage.src = elementSrc;
   openPopup(popupCard);
-
-  const createImage = document.querySelector(".popup__card-image");
-  const createTitle = document.querySelector(".popup__card-title");
-  createImage.src = event.target.currentSrc;
-  createImage.alt = event.target.alt;
-  console.log(event.target.alt);
-  createTitle.textContent = event.target.alt;
 }
 
 // кнопки редиктирования профиля
