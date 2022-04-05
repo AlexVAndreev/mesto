@@ -1,16 +1,16 @@
 // Попапы
 const popupProfileEdit = document.querySelector(".popup_profile-edit");
 const popupElementAdd = document.querySelector(".popup_element-add");
-const popupCard = document.querySelector(".popup__card");
+const popupCard = document.querySelector(".popup_cards");
 console.log(popupCard);
 // Кнопки
 const profileEditOpenButton = document.querySelector(".profile__edit-button");
 const profileEditCloseButton = document.querySelector(
-  ".popup__close_profile-edit"
+  ".popup_close-profile-edit"
 ); // кнопка закрытия редактирования профиля
 const elementAddBtn = document.querySelector(".profile__add-button");
 const elementAddCloseButton = document.querySelector(
-  ".popup__close_element-add"
+  ".popup_close-element-add"
 );
 // Зполняемые поля
 const profileEditForm = document.querySelector(".popup__profile-form");
