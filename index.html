@@ -43,10 +43,10 @@
     <footer class="footer">
       <p class="footer__copy">© 2020 Mesto Russia</p>
     </footer>
-    <section class="popup popup_forms">
+    <section class="popup popup__profile-edit">
       <div class="popup__container">
         <button
-          class="popup__close-icon"
+          class="popup__close-icon popup__close_profile-edit"
           name="popup-close-icon"
           type="button"
         ></button>
@@ -71,6 +71,16 @@
             name="profile-submit"
           />
         </form>
+      </div>
+    </section>
+    <!-- ------------- -->
+    <section class="popup popup__element-add">
+      <div class="popup__container">
+        <button
+          class="popup__close-icon popup__close_element-add"
+          name="popup-close-icon"
+          type="button"
+        ></button>
         <form class="popup__element-form" name="edit-form">
           <h2 class="popup__title">Новое место</h2>
           <input
@@ -96,13 +106,15 @@
         </form>
       </div>
     </section>
-    <section class="popup popup_image">
-      <div class="popup__image-container">
+    <section class="popup popup_image popup__card">
+      <div class="popup__card-container">
         <button
-          class="popup__close-icon"
-          name="popup-close-icon"
+          class="popup__close-icon popup__card-close-button"
+          name="popup-card-close-icon"
           type="button"
         ></button>
+        <img src="#" alt="#" class="popup__card-image" />
+        <h3 class="popup__card-title"></h3>
       </div>
     </section>
 
