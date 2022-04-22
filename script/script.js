@@ -2,7 +2,7 @@
 const popupProfileEdit = document.querySelector(".popup_profile-edit");
 const popupElementAdd = document.querySelector(".popup_element-add");
 const popupCard = document.querySelector(".popup_cards");
-console.log(popupCard);
+
 // Кнопки
 const profileEditOpenButton = document.querySelector(".profile__edit-button");
 const profileEditCloseButton = document.querySelector(
@@ -95,7 +95,18 @@ initialCards.forEach((item) => {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  popup.addEventListener("click", (evt) => {
+    if (evt.target.classList.contains("popup")) {
+      closePopup(popup);
+    }
+  });
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      closePopup(popup);
+    }
+  });
 }
+
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
 }
@@ -122,8 +133,9 @@ function formSubmitElement(evt) {
   console.log(elementInputTitle.value);
   renderElement(insertElement(elementInputTitle.value, elementInputLink.value));
   closePopup(popupElementAdd);
-  elementInputTitle.value = "";
-  elementInputLink.value = "";
+  // elementInputTitle.value = "";
+  // elementInputLink.value = "";
+  formReset(evt.target);
 }
 
 // Обработка Лайка
@@ -142,6 +154,9 @@ function openPopupCard(elementTitle, elementSrc) {
   createImage.src = elementSrc;
   openPopup(popupCard);
 }
+function formReset(resettingForm) {
+  resettingForm.reset();
+}
 
 // кнопки редиктирования профиля
 profileEditOpenButton.addEventListener("click", openProfileEdit);
@@ -159,3 +174,4 @@ elementAddForm.addEventListener("submit", formSubmitElement);
 
 // Закрытие попапа с картинкой
 popupCardCloseButton.addEventListener("click", () => closePopup(popupCard));
+// popupCard.addEventListener("click", () => closePopup(popupCard));

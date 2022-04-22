@@ -42,3 +42,6 @@
 @import url(../blocks/popup/__card-title/popup__card-title.css);
 @import url(../blocks/popup/__card-image/popup__card-image.css);
 @import url(../blocks/popup/popup_image.css);
+@import url(../blocks/popup/__span-error/popup__span-error.css);
+@import url(../blocks/popup/__submit-btn/_inactive/popup__submit-btn_inactive.css);
+@import url(../blocks/popup/__input-error/popup__input-error.css);
