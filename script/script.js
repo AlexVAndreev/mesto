@@ -95,20 +95,14 @@ initialCards.forEach((item) => {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
-  popup.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("popup")) {
-      closePopup(popup);
-    }
-  });
-  document.addEventListener("keydown", (evt) => {
-    if (evt.key === "Escape") {
-      closePopup(popup);
-    }
-  });
+  popup.addEventListener("click", closeByClick);
+  document.addEventListener("keydown", closeByEscape);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
+  document.removeEventListener("keydown", closeByEscape);
+  popup.removeEventListener("click", closeByClick);
 }
 // Обработка редактирования профиля.
 function openProfileEdit() {
@@ -156,6 +150,19 @@ function openPopupCard(elementTitle, elementSrc) {
 }
 function formReset(resettingForm) {
   resettingForm.reset();
+}
+
+function closeByEscape(evt) {
+  if (evt.key === "Escape") {
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
+  }
+}
+function closeByClick(evt) {
+  if (evt.target.classList.contains("popup")) {
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
+  }
 }
 
 // кнопки редиктирования профиля
