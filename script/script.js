@@ -124,11 +124,15 @@ function openAddElement() {
 
 function formSubmitElement(evt) {
   evt.preventDefault();
+  const buttonSubmit = evt.target.querySelector(".popup__submit-btn");
+  console.log(buttonSubmit);
   console.log(elementInputTitle.value);
   renderElement(insertElement(elementInputTitle.value, elementInputLink.value));
   closePopup(popupElementAdd);
   // elementInputTitle.value = "";
   // elementInputLink.value = "";
+  buttonSubmit.setAttribute("disabled", true);
+  buttonSubmit.classList.add(settings.inactiveButtonClass);
   formReset(evt.target);
 }
 
