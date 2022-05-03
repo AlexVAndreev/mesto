@@ -1,3 +1,6 @@
+import { FormValidator, settings } from "./FormValidator.js";
+import Card from "./Card.js";
+
 // Попапы
 const popupProfileEdit = document.querySelector(".popup_profile-edit");
 const popupElementAdd = document.querySelector(".popup_element-add");
@@ -12,7 +15,7 @@ const elementAddBtn = document.querySelector(".profile__add-button");
 const elementAddCloseButton = document.querySelector(
   ".popup__close-element-add"
 );
-// Зполняемые поля
+// Зaполняемые поля
 const profileEditForm = document.querySelector(".popup__profile-form");
 const profileTitle = document.querySelector(".profile__title");
 const profileSubtitle = document.querySelector(".profile__subtitle");
@@ -29,9 +32,6 @@ const elementInputLink = document.querySelector(
 const elementsGrid = document.querySelector(".elements");
 const elementAddForm = document.querySelector(".popup__element-form");
 const elementTemplate = document.querySelector("#element").content;
-
-const createImage = document.querySelector(".popup__card-image");
-const createTitle = document.querySelector(".popup__card-title");
 const popupCardCloseButton = document.querySelector(
   ".popup__card-close-button"
 );
@@ -66,32 +66,15 @@ const initialCards = [
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
   },
 ];
-// вставка элемента
-function insertElement(elementTitle, elementSrc) {
-  const cardElement = elementTemplate.querySelector(".element").cloneNode(true);
-  const elementImage = cardElement.querySelector(".element__photo");
-  elementImage.src = elementSrc;
-  elementImage.alt = elementTitle;
-  elementImage.addEventListener("click", () =>
-    openPopupCard(elementTitle, elementSrc)
-  ); //Добавление слушателя на картинку
-  cardElement.querySelector(".element__title").textContent = elementTitle;
-  cardElement
-    .querySelector(".element__like")
-    .addEventListener("click", likeActive);
-  cardElement
-    .querySelector(".element__basket")
-    .addEventListener("click", removeElement);
 
-  return cardElement;
-}
+initialCards.forEach((item) => {
+  const card = new Card(item.name, item.link, elementTemplate);
+  renderElement(card.generateCard());
+});
+
 function renderElement(renderCard) {
   elementsGrid.prepend(renderCard);
 }
-// первоначальная загрузка карточек
-initialCards.forEach((item) => {
-  renderElement(insertElement(item.name, item.link));
-});
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -125,33 +108,24 @@ function openAddElement() {
 function formSubmitElement(evt) {
   evt.preventDefault();
   const buttonSubmit = evt.target.querySelector(".popup__submit-btn");
-  console.log(buttonSubmit);
-  console.log(elementInputTitle.value);
-  renderElement(insertElement(elementInputTitle.value, elementInputLink.value));
+  const card = new Card(
+    elementInputTitle.value,
+    elementInputLink.value,
+    elementTemplate
+  );
+  renderElement(card.generateCard());
   closePopup(popupElementAdd);
-  // elementInputTitle.value = "";
-  // elementInputLink.value = "";
   buttonSubmit.setAttribute("disabled", true);
   buttonSubmit.classList.add(settings.inactiveButtonClass);
   formReset(evt.target);
 }
 
-// Обработка Лайка
-function likeActive(event) {
-  // console.log(event);
-  event.target.classList.toggle("element__like_active");
-}
-
-function removeElement(event) {
-  event.target.closest(".element").remove();
-}
-function openPopupCard(elementTitle, elementSrc) {
-  // console.log(elementTitle, elementSrc);
-  createImage.alt = elementTitle;
-  createTitle.textContent = elementTitle;
-  createImage.src = elementSrc;
-  openPopup(popupCard);
-}
+// function openPopupCard(elementTitle, elementSrc) {
+//   createImage.alt = elementTitle;
+//   createTitle.textContent = elementTitle;
+//   createImage.src = elementSrc;
+//   openPopup(popupCard);
+// }
 function formReset(resettingForm) {
   resettingForm.reset();
 }
@@ -168,6 +142,15 @@ function closeByClick(evt) {
     closePopup(openedPopup);
   }
 }
+const formList = Array.from(document.querySelectorAll(settings.formSelector));
+console.log(formList);
+formList.forEach((formElement) => {
+  formElement.addEventListener("submit", (evt) => {
+    evt.preventDefault();
+  });
+  const Validator = new FormValidator(settings, formElement);
+  Validator.enableValidation();
+});
 
 // кнопки редиктирования профиля
 profileEditOpenButton.addEventListener("click", openProfileEdit);
