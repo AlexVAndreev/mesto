@@ -23,7 +23,6 @@ export default class Card {
     this._element
       .querySelector(".element__photo")
       .addEventListener("click", () => {
-        console.log(this._openPopupCard);
         this._openPopupCard(this._elementTitle, this._elementSrc);
       });
 

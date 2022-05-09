@@ -131,7 +131,6 @@ function formSubmitElement(evt) {
   );
   renderElement(tmpCard);
   closePopup(popupElementAdd);
-  // buttonSubmit.setAttribute("disabled", true);
   buttonSubmit.classList.add(settings.inactiveButtonClass);
   evt.target.reset();
 }
@@ -142,9 +141,6 @@ function openPopupCard(elementTitle, elementSrc) {
   createImage.src = elementSrc;
   openPopup(popupCard);
 }
-// function formReset(resettingForm) {
-//   resettingForm.reset();
-// }
 
 function closeByEscape(evt) {
   if (evt.key === "Escape") {
@@ -154,7 +150,6 @@ function closeByEscape(evt) {
 }
 function closeByClick(evt) {
   if (evt.target.classList.contains("popup")) {
-    // const openedPopup = document.querySelector(".popup_opened");
     closePopup(evt.target);
   }
 }
