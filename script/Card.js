@@ -1,51 +1,46 @@
-const createImage = document.querySelector(".popup__card-image");
-const createTitle = document.querySelector(".popup__card-title");
-const popupCard = document.querySelector(".popup_cards");
-
 export default class Card {
-  constructor(name, link, templateSelector) {
+  constructor(name, link, templateSelector, openPopupCard) {
     this._elementTitle = name;
     this._elementSrc = link;
     this._templateSelector = templateSelector;
+    this._openPopupCard = openPopupCard;
   }
   _getTemplate() {
-    const cardElement = this._templateSelector
-      .querySelector(".element")
+    const cardElement = document
+      .querySelector(this._templateSelector)
+      .content.querySelector(".element")
       .cloneNode(true);
     return cardElement;
   }
-  _like() {
-    this._element
-      .querySelector(".element__like")
-      .classList.toggle("element__like_active");
+  _handleLikeButton() {
+    this._likeButton.classList.toggle("element__like_active");
   }
   _remove() {
-    this._element.closest(".element").remove();
+    this._element.remove();
+    this._element = null;
   }
-
-  _openPopupCard() {
-    createImage.alt = this._elementTitle;
-    createTitle.textContent = this._elementTitle;
-    createImage.src = this._elementSrc;
-    popupCard.classList.add("popup_opened");
-  }
-
   _setEventListener() {
     this._element
       .querySelector(".element__photo")
-      .addEventListener("click", () => this._openPopupCard());
-    this._element
-      .querySelector(".element__like")
-      .addEventListener("click", () => this._like());
+      .addEventListener("click", () => {
+        console.log(this._openPopupCard);
+        this._openPopupCard(this._elementTitle, this._elementSrc);
+      });
+
+    this._likeButton.addEventListener("click", (evt) => {
+      this._handleLikeButton(evt);
+    });
     this._element
       .querySelector(".element__basket")
       .addEventListener("click", () => this._remove());
   }
   generateCard() {
     this._element = this._getTemplate();
+    this._likeButton = this._element.querySelector(".element__like");
+    this._cardImage = this._element.querySelector(".element__photo");
     this._setEventListener();
-    this._element.querySelector(".element__photo").src = this._elementSrc;
-    this._element.querySelector(".element__photo").alt = this._elementTitle;
+    this._cardImage.src = this._elementSrc;
+    this._cardImage.alt = this._elementTitle;
     this._element.querySelector(".element__title").textContent =
       this._elementTitle;
     return this._element;
