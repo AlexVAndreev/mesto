@@ -1,4 +1,6 @@
 .popup__span-error {
+  display: block;
+  height: 2em;
   width: 80%;
   margin: 5px auto 0;
   color: red;

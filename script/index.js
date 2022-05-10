@@ -13,8 +13,8 @@ const settings = {
 // Попапы
 const popupProfileEdit = document.querySelector(".popup_profile-edit");
 const popupElementAdd = document.querySelector(".popup_element-add");
-const createImage = document.querySelector(".popup__card-image");
-const createTitle = document.querySelector(".popup__card-title");
+const cardImage = document.querySelector(".popup__card-image");
+const cardTitle = document.querySelector(".popup__card-title");
 const popupCard = document.querySelector(".popup_cards");
 
 // Кнопки
@@ -107,7 +107,9 @@ function closePopup(popup) {
 function openProfileEdit() {
   nameInput.value = profileTitle.textContent;
   jobInput.value = profileSubtitle.textContent;
+
   openPopup(popupProfileEdit);
+  profileValidation.toggleState();
 }
 
 function formSubmitProfile(evt) {
@@ -131,14 +133,14 @@ function formSubmitElement(evt) {
   );
   renderElement(tmpCard);
   closePopup(popupElementAdd);
-  buttonSubmit.classList.add(settings.inactiveButtonClass);
-  evt.target.reset();
+  elementAddForm.reset();
+  newCardValidation.toggleState();
 }
 
 function openPopupCard(elementTitle, elementSrc) {
-  createImage.alt = elementTitle;
-  createTitle.textContent = elementTitle;
-  createImage.src = elementSrc;
+  cardImage.alt = elementTitle;
+  cardTitle.textContent = elementTitle;
+  cardImage.src = elementSrc;
   openPopup(popupCard);
 }
 

@@ -41,7 +41,7 @@ export default class FormValidator {
     });
   }
 
-  _toggleState() {
+  toggleState() {
     if (this._hasInvalidInput(this._inputList)) {
       this._buttonElement.classList.add(this._inactiveButtonClass);
       this._buttonElement.setAttribute("disabled", "true");
@@ -57,10 +57,10 @@ export default class FormValidator {
     this._buttonElement = this._formElement.querySelector(
       this._submitButtonSelector
     );
-    this._toggleState();
+    this.toggleState();
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
-        this._toggleState();
+        this.toggleState();
         this._checkInputValidity(inputElement);
       });
     });
