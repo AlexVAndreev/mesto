@@ -1,9 +1,10 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./Card.js";
-import Section from "./Section.js";
-import PopupWithImage from "./PopupWithImage.js";
-import PopupWithFrom from "./PopupWithForm.js";
-import UserInfo from "./UserInfo.js";
+import FormValidator from "./components/FormValidator.js";
+import Card from "./components/Card.js";
+import Section from "./components/Section.js";
+import PopupWithImage from "./components/PopupWithImage.js";
+import PopupWithFrom from "./components/PopupWithForm.js";
+import UserInfo from "./components/UserInfo.js";
+import "./index.css";
 
 const settings = {
   formSelector: ".popup__form",
@@ -32,10 +33,6 @@ const jobInput = document.querySelector(".popup__profile-input_type_subtitle");
 const elementAddForm = document.querySelector(".popup__element-form");
 
 const initialCards = [
-  // {
-  //   name: "girl",
-  //   link: "https://w-dog.ru/wallpapers/4/6/538862541836441/devushka-krasivaya-lico-golubye-glaza-volosy-portret-sharf.jpg",
-  // },
   {
     name: "Архыз",
     link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
