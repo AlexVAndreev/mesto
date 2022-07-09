@@ -5,7 +5,7 @@
   padding: 0;
   border-style: none;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(./././images/popup_close_icon.svg);
+  background-image: url(../../../images/popup_close_icon.svg);
   position: absolute;
   top: -35px;
   right: -35px;
