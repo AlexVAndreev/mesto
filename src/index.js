@@ -53,7 +53,7 @@ const popupConfirm = new PopupConfirm(".popup__confirm", submitConfirm);
 popupConfirm.setEventListeners();
 
 const popupChangeAvatar = new PopupWithFrom(
-  ".popup__changeAvatar",
+  ".popup__avatar-change",
   submitChangeAvatar
 );
 popupChangeAvatar.setEventListener();
