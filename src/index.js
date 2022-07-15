@@ -25,7 +25,7 @@ const popupCard = ".popup_cards";
 // Кнопки
 const profileEditOpenButton = document.querySelector(".profile__edit-button");
 const elementAddBtn = document.querySelector(".profile__add-button");
-const avatarChangeBtn = document.querySelector(".porfile__avatar-conatainer");
+const avatarChangeBtn = document.querySelector(".profile__avatar-conatainer");
 // Зaполняемые поля
 const profileEditForm = document.querySelector(".popup__profile-form");
 const profileTitle = ".profile__title";

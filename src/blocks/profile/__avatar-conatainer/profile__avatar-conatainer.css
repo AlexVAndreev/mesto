@@ -1,4 +1,4 @@
-.profile_avatar-conatainer {
+.profile__avatar-conatainer {
   padding: 0;
   width: 120px;
   height: 120px;
@@ -7,7 +7,7 @@
   background-color: rgba(0, 0, 0, 0);
   border-radius: 60px;
 }
-.profile_avatar-conatainer:hover {
+.profile__avatar-conatainer:hover {
   background-image: url(../../../images/editAvatar_button.svg);
   background-position: center center;
   background-repeat: no-repeat;
