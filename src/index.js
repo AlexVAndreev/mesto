@@ -49,7 +49,7 @@ popupWithFormProfile.setEventListener();
 const popupWithElementAdd = new PopupWithFrom(popupElementAdd, addCard);
 popupWithElementAdd.setEventListener();
 
-const popupConfirm = new PopupConfirm(".popup__confirm", submitConfirm);
+const popupConfirm = new PopupConfirm(".popup_confirm", submitConfirm);
 popupConfirm.setEventListeners();
 
 const popupChangeAvatar = new PopupWithFrom(
